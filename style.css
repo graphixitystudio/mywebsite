@@ -1,46 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f0f0f;
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  background: #0B0F1A;
+  color: #FFFFFF;
 }
 
+/* SECTIONS */
 section {
-  padding: 80px 10%;
+  padding: 100px 10%;
 }
 
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, rgba(106,0,255,0.25), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(0,229,255,0.18), transparent 60%);
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background: linear-gradient(120deg, #00E5FF, #6A00FF);
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.hero p {
+  max-width: 520px;
+  color: #B8C0FF;
+  font-size: 18px;
+}
+
+/* SERVICES */
+.services h2 {
+  font-size: 42px;
+  margin-bottom: 50px;
 }
 
 .cards {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .card {
-  background: #1c1c1c;
-  padding: 40px;
   flex: 1;
-  transition: 0.3s ease;
+  padding: 45px;
+  border-radius: 18px;
+  background: rgba(18, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(138, 99, 255, 0.25);
+  transition: 0.4s ease;
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.card p {
+  color: #B8C0FF;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  background: #2a2a2a;
+  transform: translateY(-14px) scale(1.03);
+  box-shadow: 0 0 60px rgba(106, 0, 255, 0.35);
 }
 
-/* animation base */
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 38px;
+}
+
+/* ANIMATIONS */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
+  transform: translateY(50px);
+  transition: 1s cubic-bezier(.19,1,.22,1);
 }
 
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
 }
