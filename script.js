@@ -1,21 +1,12 @@
-// Reveal animation
-const reveals = document.querySelectorAll(".reveal");
-function revealOnScroll(){
-  reveals.forEach((el,i)=>{
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      setTimeout(()=> el.classList.add("active"), i*120);
+// Simple scroll animation
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const pos = card.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 100) {
+      card.style.opacity = 1;
+      card.style.transform = "translateY(0)";
     }
   });
-}
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-// Logo shrink on scroll
-window.addEventListener('scroll', () => {
-  if(window.scrollY > 50){
-    document.body.classList.add('scrolled');
-  } else {
-    document.body.classList.remove('scrolled');
-  }
 });
